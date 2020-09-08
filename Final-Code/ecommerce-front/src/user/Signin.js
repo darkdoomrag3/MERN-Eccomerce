@@ -93,8 +93,11 @@ const Signin = () => {
             } else {
                 return <Redirect to="/user/dashboard" />
             }
-        }
 
+        }
+        if (isAuthenticated()) {
+            return <Redirect to="/" />
+        }
     }
 
 
