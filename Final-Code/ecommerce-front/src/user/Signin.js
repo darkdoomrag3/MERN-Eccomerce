@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Layout from '../core/Layout'
-import { signin, authenticate } from '../auth/index'
+import { signin, authenticate, isAuthenticated } from '../auth/index'
 import { Link, Redirect } from 'react-router-dom'
 
 
@@ -15,6 +15,8 @@ const Signin = () => {
     })
 
     const { email, password, error, loading, redirectToReferrer } = values
+    const { user } = isAuthenticated()
+
 
     const handleChange = name => event => {
         setValues({ ...values, [name]: event.target.value, error: false })
@@ -86,7 +88,11 @@ const Signin = () => {
 
     const redirectUSer = () => {
         if (redirectToReferrer) {
-            return <Redirect to="/" />
+            if (user.role === 1) {
+                return <Redirect to="/admin/dashboard" />
+            } else {
+                return <Redirect to="/user/dashboard" />
+            }
         }
 
     }
