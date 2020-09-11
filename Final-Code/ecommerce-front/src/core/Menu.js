@@ -43,7 +43,6 @@ const Menu = ({ history }) => {
 
 
 
-
                     {!isAuthenticated() && (
                         <Fragment>
 
