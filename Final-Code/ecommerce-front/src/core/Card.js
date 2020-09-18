@@ -20,7 +20,7 @@ const Card = ({ product }) => {
                 </div>
 
                 <Link to='/'>
-                    <button className='btn btn-outline-primary mt-2 mb-2'>
+                    <button className='btn btn-outline-primary mt-2 mb-2 mr-2 '>
                         View Product
                     </button>
 

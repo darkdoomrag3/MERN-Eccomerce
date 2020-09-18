@@ -26,6 +26,9 @@ const Menu = ({ history }) => {
                         <Link class="nav-link" to="/" style={isActive(history, '/')} >Home</Link>
                     </li>
 
+                    <li class="nav-item">
+                        <Link class="nav-link" to="/shop" style={isActive(history, '/')} >Shop</Link>
+                    </li>
 
 
                     {isAuthenticated() && isAuthenticated().user.role === 0 && (

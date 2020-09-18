@@ -10,6 +10,7 @@ import Dashboard from './user/UserDashboard'
 import AdminDashboard from './user/AdminDashboard'
 import AddCategory from './admin/AddCategory'
 import AddProduct from './admin/AddProduct'
+import Shop from './core/Shop'
 
 
 
@@ -21,6 +22,7 @@ const Routes = () => {
             <Switch>
 
                 <Route exact path="/" component={Home} />
+                <Route exact path="/shop" component={Shop} />
                 <Route exact path="/signup" component={Signup} />
                 <Route exact path="/signin" component={Signin} />
                 <PrivateRoute exact path="/user/dashboard" component={Dashboard} />
