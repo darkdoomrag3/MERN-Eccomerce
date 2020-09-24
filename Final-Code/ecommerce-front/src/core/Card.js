@@ -14,7 +14,7 @@ const Card = ({ product }) => {
                 <div className="cart-body">
 
                     <ShowImage item={product} url="product " />
-                    {product.description}
+                    {product.description.substring(0, 100)}
 
                     <p>${product.price}</p>
                 </div>
