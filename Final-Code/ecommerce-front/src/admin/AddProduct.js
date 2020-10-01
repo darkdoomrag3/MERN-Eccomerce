@@ -86,7 +86,12 @@ const AddProduct = () => {
 
     const newPostForm = () => (
         <form className="mb-3" onSubmit={clickSubmit}>
-
+            <h4>Post Photo</h4>
+            <div className="form-group">
+                <label className="btn btn-secondary">
+                    <input onChange={handleChange('photo')} type="file" name="photo" accept="image/*" />
+                </label>
+            </div>
 
             <div className="form-group">
                 <label className="text-muted">Name</label>
@@ -128,13 +133,6 @@ const AddProduct = () => {
             <div className="form-group">
                 <label className="text-muted">Quantity</label>
                 <input onChange={handleChange('quantity')} type="number" className="form-control" value={quantity} />
-            </div>
-
-            <h4>Post Photo</h4>
-            <div className="form-group">
-                <label className="btn btn-secondary">
-                    <input onChange={handleChange('photo')} type="file" name="photo" accept="image/*" />
-                </label>
             </div>
 
             <button className="btn btn-outline-primary">Create Product</button>
