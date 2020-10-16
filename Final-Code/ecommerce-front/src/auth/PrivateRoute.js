@@ -1,33 +1,23 @@
-import React, { Component } from 'react'
-import { Redirect, Route } from 'react-router-dom'
-import { isAuthenticated } from './index'
-
+import React, { Component } from "react";
+import { Route, Redirect } from "react-router-dom";
+import { isAuthenticated } from "./index";
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
-
-    <Route {...rest}
+    <Route
+        {...rest}
         render={props =>
-            isAuthenticated() ?
-
-                (
-                    <Component {...props} />
-                )
-
-                :
-
-                (<Redirect to={{
-                    pathname: "/signin",
-                    state: { from: props.location }
-                }} />)
-
+            isAuthenticated() ? (
+                <Component {...props} />
+            ) : (
+                <Redirect
+                    to={{
+                        pathname: "/signin",
+                        state: { from: props.location }
+                    }}
+                />
+            )
         }
-
-
-
-
     />
+);
 
-)
-
-
-export default PrivateRoute
+export default PrivateRoute;
